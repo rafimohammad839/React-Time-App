@@ -37,11 +37,10 @@ const Timer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayTime, startTime]);
 
-  useEffect(() => {
-    // console.log(typeof displayTime.sec);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [startTime])
-
+  // useEffect(() => {
+  //   console.log(displayTime.sec.toString().length);
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [startTime, displayTime])
 
   const formatAndSetTime = () => {
     if (second < 60) {
@@ -97,15 +96,12 @@ const Timer = () => {
           className="danger"
         />
       </form>
-      <p className="text-center">
-        {!displayTime.min.toString().length || displayTime.min.toString().length <= 1 ? "0" : ""}
+      <p className="text-center display-time">
+        {displayTime.min.toString().length <= 1 ? "0" : ""}
         {displayTime.min}:
-        {!displayTime.sec.toString().length || displayTime.sec.toString().length <= 1 ? "0" : ""}
+        {displayTime.sec.toString().length <= 1 ? "0" : ""}
         {displayTime.sec}
       </p>
-      {/* <p className="text-center">
-        {displayTime.min}:{displayTime.sec}
-      </p> */}
     </div>
   );
 };
