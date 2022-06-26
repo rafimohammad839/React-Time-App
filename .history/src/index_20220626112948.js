@@ -6,7 +6,9 @@ import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <TimeProvider>
-    <App />
-  </TimeProvider>
+  <React.StrictMode>
+    <TimeProvider>
+      <App />
+    </TimeProvider>
+  </React.StrictMode>
 );

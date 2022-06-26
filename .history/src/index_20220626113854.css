@@ -14,10 +14,5 @@ code {
 
 .timer-container {
   width: 600px;
-  margin: 90px auto;
+  margin: 30px auto;
 }
-
-.text-center {
-  text-align: center;
-}
-

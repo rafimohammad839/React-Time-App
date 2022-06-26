@@ -13,11 +13,6 @@ code {
 }
 
 .timer-container {
-  width: 600px;
-  margin: 90px auto;
+  width: 555px;
+  margin: auto;
 }
-
-.text-center {
-  text-align: center;
-}
-
