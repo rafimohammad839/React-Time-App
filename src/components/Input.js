@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Input = ({ inputOptions }) => {
-
+const Input = ({ label, inputOptions }) => {
   return (
-    <input {...inputOptions} />
-  )
-}
+    <>
+      {label && (
+        <label>{label}</label>
+      )}
+      <input {...inputOptions} />
+    </>
+  );
+};
 
-export default Input
+export default Input;

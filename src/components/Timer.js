@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+import { TimeContext } from "../contexts/TimeContext";
 import Button from "./Button";
 import Input from "./Input";
 
 const Timer = () => {
-  const [minute, setMinute] = useState(0);
-  const [second, setSecond] = useState(0);
-  const [startTime, setStartTime] = useState(false);
-  const [displayTime, setDisplayTime] = useState({ min: "00", sec: "00" });
+  
+  const { second, setSecond, minute, setMinute, displayTime, setDisplayTime, startTime, setStartTime } = useContext(TimeContext);
 
   const handleChange = (e) => {
     if (e.target.value < 0) return;
@@ -36,11 +35,6 @@ const Timer = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayTime, startTime]);
-
-  // useEffect(() => {
-  //   console.log(displayTime.sec.toString().length);
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [startTime, displayTime])
 
   const formatAndSetTime = () => {
     if (second < 60) {
