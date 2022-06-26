@@ -50,7 +50,7 @@ const Timer = () => {
       let addToMinutes = parseInt(minute) + Math.trunc(second / 60);
       setDisplayTime({ ...displayTime, min: addToMinutes, sec: addToSeconds });
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,17 +71,22 @@ const Timer = () => {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <Input
-          type="number"
-          className="minute"
-          value={minute}
-          onChange={handleChange}
+          inputOptions={{
+            type: "number",
+            className: "minute",
+            value: minute,
+            onChange: handleChange,
+          }}
         />
         <Input
-          type="number"
-          className="second"
-          value={second}
-          onChange={handleChange}
+          inputOptions={{
+            type: "number",
+            className: "second",
+            value: second,
+            onChange: handleChange,
+          }}
         />
+        
         <Button type="submit" buttonTitle="Start" className="primary" />
         <Button
           type="button"
@@ -98,8 +103,7 @@ const Timer = () => {
       </form>
       <p className="text-center display-time">
         {displayTime.min.toString().length <= 1 ? "0" : ""}
-        {displayTime.min}:
-        {displayTime.sec.toString().length <= 1 ? "0" : ""}
+        {displayTime.min}:{displayTime.sec.toString().length <= 1 ? "0" : ""}
         {displayTime.sec}
       </p>
     </div>
